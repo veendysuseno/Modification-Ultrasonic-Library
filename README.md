@@ -22,13 +22,13 @@ The `Ultrasonic` class provides an interface for the ultrasonic sensor to measur
 2. **\*Create an Instance:** Create an instance of the Ultrasonic class by specifying the trigger and echo pins.
 
    ```cpp
-   Ultrasonic sensor(triggerPin, echoPin);
+   Ultrasonic sensors(triggerPin, echoPin);
    ```
 
 3. **Read Distance:** Call the bacaUltrasonic() method to get the distance in centimeters.
 
    ```cpp
-   long distance = sensor.bacaUltrasonic();
+   long distance = sensors.readUltrasonic();
    ```
 
 ## Example Sketch
@@ -41,14 +41,14 @@ Here's a simple example of how to use the library in your Arduino sketch:
 #define TRIGGER_PIN 9
 #define ECHO_PIN 10
 
-Ultrasonic sensor(TRIGGER_PIN, ECHO_PIN);
+Ultrasonic sensors(TRIGGER_PIN, ECHO_PIN);
 
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  long distance = sensor.bacaUltrasonic();
+  long distance = sensor.readUltrasonic();
   Serial.print("Distance: ");
   Serial.print(distance);
   Serial.println(" cm");
